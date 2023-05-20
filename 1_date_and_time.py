@@ -1,16 +1,6 @@
 import locale
 from datetime import date, timedelta, datetime
 
-"""
-Домашнее задание №2
-
-Дата и время
-
-1. Напечатайте в консоль даты: вчера, сегодня, 30 дней назад
-2. Превратите строку "01/01/20 12:10:03.234567" в объект datetime
-
-"""
-
 
 def print_days():
 
