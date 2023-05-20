@@ -1,21 +1,25 @@
-"""
+import csv
 
-Домашнее задание №2
 
-Работа csv
+mafia_list = [
+    {'name': 'Tony Soprano', 'age': 40, 'job': 'Boss'},
+    {'name': 'Paulie Gualtieri', 'age': 65, 'job': 'Captain'},
+    {'name': 'Silvio Dante', 'age': 55, 'job': 'Consigliere'},
+    {'name': 'Christopher Moltisanti', 'age': 31, 'job': 'Captain'},
+    ]
 
-1. Создайте список словарей с ключами name, age и job и значениями по вашему выбору. 
-   В списке нужно создать не менее 4-х словарей
-2. Запишите содержимое списка словарей в файл в формате csv
-
-"""
 
 def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+
+    with open('mafia.csv', 'w', encoding='utf-8', newline='') as mafia:
+
+        fields = ['name', 'age', 'job']
+        writer = csv.DictWriter(mafia, fields, delimiter=';')
+        writer.writeheader()
+
+        for user in mafia_list:
+            writer.writerow(user)
+
 
 if __name__ == "__main__":
     main()
